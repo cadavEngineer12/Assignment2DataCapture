@@ -13,6 +13,7 @@ import java.net.URL;
  * @author Angel Ortiz, Charles Davis
  */
 public class API {
+
     /**
      * THe apiData method is for grabbing the core data from the website listed below
      * @param urlString is the URL that will be used
@@ -77,7 +78,7 @@ public class API {
      * @throws URISyntaxException handles syntax exceptions
      */
     public String getRadfordForecast() throws IOException, URISyntaxException {
-        String pointsUrl = "https://api.weather.gov/points/37.2296,-80.4137";
+        String pointsUrl = "https://api.weather.gov/points/37.2296,-80.4137";  // Coordinates of Radford
         String pointsJson = apiData(pointsUrl);
 
         // Looks for "forecast": "https://api.weather.gov/gridpoints/RNK/71,98/forecast" as a keyword
@@ -87,20 +88,20 @@ public class API {
         return apiData(forecastUrl);
     }
 
-    /*
-    Methods for the type of data will be handled below
+    /**
+     * THis method is to get the final rain data
+     * @return the percent chance of rain as an integer
+     * @throws IOException in case that the IO can not be received
+     * @throws URISyntaxException in case the URI could not be loaded
      */
-    public String getRain() throws IOException, URISyntaxException {
+    public int getRain() throws IOException, URISyntaxException {
         String forecastJson = getRadfordForecast();
 
         int index = forecastJson.indexOf("\"probabilityOfPrecipitation\"");
         int valueStart = forecastJson.indexOf("\"value\": ", index) + 9;
         int valueEnd = forecastJson.indexOf("}", valueStart);
         String value = forecastJson.substring(valueStart, valueEnd).trim();
-
-        if (value.equals("null")) value = "0";
-        return "Rain chance: " + value + "%";
-
+        return Integer.parseInt(value);  // to convert the String to an Integer
     }
 
 }
