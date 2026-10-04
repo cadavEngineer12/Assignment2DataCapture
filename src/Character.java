@@ -65,6 +65,14 @@ public class Character {
             setAttack(getAttack() + 5);
             setHealth(getHealth() - 10);
         }
+
+        if (data.getTemperature() > 45) {
+            System.out.println("All Buffs and Debuffs has been applied....");
+            setDefense(getDefense() + 5);
+            setAttack(getAttack() - 5);
+            setHealth(getHealth() +5);
+
+        }
     }
 
     @Override

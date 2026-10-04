@@ -103,4 +103,22 @@ public class API {
         return Integer.parseInt(value);  // to convert the String to an Integer
     }
 
+    /**
+     * This method is to get the final Temperature data
+     * @return the temperature data
+     * @throws IOException in case that the IO can not be received
+     * @throws URISyntaxException in case the URI could not be loaded
+     */
+    public int getTemperature() throws IOException, URISyntaxException {
+        String forecastJson = getRadfordForecast();
+
+        int periodStart = forecastJson.indexOf("\"periods\"");
+        int tempIndex = forecastJson.indexOf("\"temperature\"", periodStart);
+        int colon = forecastJson.indexOf(":", tempIndex) + 1;
+        int comma = forecastJson.indexOf(",", colon);
+        String value = forecastJson.substring(colon, comma).trim();
+
+        return Integer.parseInt(value);
+    }
+
 }
