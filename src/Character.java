@@ -60,6 +60,7 @@ public class Character {
 
     public void statBoost() throws IOException, URISyntaxException {
         if (data.getRain() > 50) {
+            System.out.println("All Buffs and Debuffs has been applied....");
             setDefense(getDefense() + 10);
             setAttack(getAttack() + 5);
             setHealth(getHealth() - 10);

@@ -6,7 +6,7 @@
 public class Main {
     public static void main(String[] args) throws Exception {
         API data = new API();
-        System.out.println(data.getRain() + "%");
+        System.out.println(data.getRain() + "%" + " chance of Rain in Radford Virginia");
         Character character = new Character("Dr. Harden", 100, 15, 10);
         character.statBoost();
         System.out.println(character);

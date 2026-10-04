@@ -35,7 +35,6 @@ public class API {
 
         // Collect the response code
         int responseCode = connection.getResponseCode();
-        System.out.println("GET Response Code :: " + responseCode);
 
         if (responseCode == connection.HTTP_OK) {
             // Create a reader with the input stream reader.
