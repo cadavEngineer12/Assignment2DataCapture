@@ -88,7 +88,7 @@ public class API {
     }
 
     /**
-     * THis method is to get the final rain data
+     * This method is to get the final rain data
      * @return the percent chance of rain as an integer
      * @throws IOException in case that the IO can not be received
      * @throws URISyntaxException in case the URI could not be loaded
