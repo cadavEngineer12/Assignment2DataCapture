@@ -1,7 +1,7 @@
 /**
  * Program that takes live data, for now just rain and apply a stat boost if the percent of rain is greater
  * than 50 percent
- * @author Charles, Angel
+ * @author Charles, Angel, Ashton, Keiren
  */
 public class Main {
     public static void main(String[] args) throws Exception {
