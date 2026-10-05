@@ -3,11 +3,11 @@ import java.net.URISyntaxException;
 
 
 /**
- * THis class is a basic character class that uses buffs and a debuff depending on the weather
+ * This class is a basic character class that uses buffs and a debuff depending on the weather
  * @author Charles
  */
 public class Character {
-    static API data = new API();
+    private final API data = new API();
     private String name;
     private int health;
     private int attack;
@@ -74,6 +74,11 @@ public class Character {
 
         }
     }
+
+    /**
+     * Converts the information received into a string to e used in the main
+     * @return stats as strings concatenated
+     */
 
     @Override
     public String toString() {
